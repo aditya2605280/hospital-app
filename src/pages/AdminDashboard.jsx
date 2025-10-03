@@ -10,6 +10,28 @@ import Navbar from "../components/Admin/Navbar";
 import CreateUser from "../components/Admin/CreateUser";
 import RoleManagement from "../components/Admin/RoleManagement";
 import UserManagement from "../components/Admin/UserManagement";
+import Appointments from "../components/Admin/Appointments"
+import Brands from "../components/Admin/Brands"
+import Commission from "../components/Admin/Commission";
+import CommissionSettings from "../components/Admin/CommissionSettings";
+import Doctor from "../components/Admin/Doctor";
+import DrAvailablities from "../components/Admin/DrAvailablities";
+import Finance from "../components/Admin/Finance";
+import Form from "../components/Admin/Form";
+import LabBooking from "../components/Admin/LabBooking";
+import LabsEmp from "../components/Admin/LabsEmp";
+import LabsTest from "../components/Admin/LabsTest";
+import LabResults from "../components/Admin/LabResults";
+import Medical from "../components/Admin/Medical";
+import Medicine from "../components/Admin/Medicine";
+import MedicinePurchases from "../components/Admin/MedicinePurchases";
+import PatientsList from "../components/Admin/PatientsList";
+import Prescriptions from "../components/Admin/Prescriptions";
+import Receptions from "../components/Admin/Receptions";
+import Supplier from "../components/Admin/Supplier";
+import Tax from "../components/Admin/Tax";
+import TaxGroups from "../components/Admin/TaxGroup";
+import User from "../components/Admin/User";
 
 const AdminDashboard = () => {
   const [activeItem, setActiveItem] = useState("dashboard");
@@ -33,6 +55,50 @@ const AdminDashboard = () => {
         return <UserManagement />;
       case "role-management":
         return <RoleManagement />;
+      case "appointments":
+        return <Appointments />;
+      case "brands":
+        return <Brands />;
+      case "commission":
+        return <Commission />;
+      case "commission-settings":
+        return <CommissionSettings />;
+      case "doctor":
+        return <Doctor />;
+      case "dr-availablities":
+        return <DrAvailablities />;
+      case "finance":
+        return <Finance />;
+      case "form":
+        return <Form />;
+      case "lab-booking":
+        return <LabBooking />;
+      case "labs-emp":
+        return <LabsEmp />;
+      case "labs-test":
+        return <LabsTest />;
+      case "lab-results":
+        return <LabResults />;
+      case "medical":
+        return <Medical />;
+      case "medicine":
+        return <Medicine />;
+      case "medicine-purchases":
+        return <MedicinePurchases />;
+      case "patients-list":
+        return <PatientsList />;
+      case "prescriptions":
+        return <Prescriptions />;
+      case "receptions":
+        return <Receptions />;
+      case "supplier":
+        return <Supplier />;
+      case "tax":
+        return <Tax />;
+      case "tax-group":
+        return <TaxGroups />;
+      case "user":
+        return <User />;
       default:
         return (
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center transition-all">

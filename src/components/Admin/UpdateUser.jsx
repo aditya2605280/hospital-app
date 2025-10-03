@@ -30,7 +30,7 @@ const UpdateUser = ({ user, onBack }) => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const roles = useSelector((state) => state.role?.roles || []);
-  console.log(roles);
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

@@ -16,7 +16,7 @@ const App = () => {
           path="/user-dashboard"
           element={
             <ProtectedRoutes>
-              <UserDashboard />
+              <AdminDashboard/>
             </ProtectedRoutes>
           }
         />

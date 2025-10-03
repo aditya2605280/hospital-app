@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { X, Plus } from "lucide-react"
 import { useDispatch } from "react-redux"
-import { createRole, fetchRoles } from "../../redux/Slices/roleSlice"
+import { createRole, fetchRoles } from "../../redux/Slices/roleSlice";
 import { toast } from "react-toastify"
 
 const CreateRoleForm = ({ onClose }) => {

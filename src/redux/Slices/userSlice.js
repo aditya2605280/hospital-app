@@ -36,6 +36,8 @@ export const fetchUsers = createAsyncThunk(
           "X-Clinic-ID": clinic_id,
         },
       });
+      
+      
       return response.data;
     } catch (error) {
       const errorMessage =
@@ -83,12 +85,15 @@ export const deleteUser = createAsyncThunk(
   "user/deleteUser",
   async (userId, { rejectWithValue }) => {
     try {
-      await axios.delete(`${BASE_URL}/delete-users/${userId}`, {
+     const response = await axios.delete(`${BASE_URL}/delete-users/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "X-Clinic-ID": clinic_id,
         },
       });
+
+      console.log(response);
+      
       return userId;
     } catch (error) {
       const errorMessage =

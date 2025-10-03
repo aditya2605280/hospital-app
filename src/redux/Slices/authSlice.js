@@ -1,18 +1,24 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "http://hospital.51development.shop/api";
+const BASE_URL = "https://api.allorigins.win/get?url=http://hospital.51development.shop/api";
+
 const token = localStorage.getItem("token");
-const clinic_id = localStorage.getItem("clinic_id");
+const clinic_id = localStorage.getItem("1");
 
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (userData, thunkAPI) => {
     try {
-      const res = await axios.post(`${BASE_URL}/login`, userData);
+      const res = await axios.post(`${BASE_URL}/login`, userData, {
+        headers: {
+          "X-Clinic-ID": clinic_id, // 👈 send this
+        },
+      });
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("clinic_id", res.data.clinic_id);
+      console.log(res.data);
 
       return res.data;
     } catch (err) {
@@ -56,7 +62,6 @@ const authSlice = createSlice({
         state.loading = false;
         state.token = action.payload.token;
         state.user = action.payload.user;
-       
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
